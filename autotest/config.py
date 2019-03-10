@@ -27,6 +27,12 @@ version = '1.0.00'
 target = os.path.join('temp', program + '_' + version + target_extension)
 target_dict[os.path.basename(target)] = target
 
+# But override them
+exe_exists = flopy.which('mt3d-usgs')
+if exe_exists:
+    target = exe_exists
+    target_dict[os.path.basename(target)] = target
+
 # Other programs needed for testing.  Look to see if these programs are
 # already in the path, and if so, then use what's in the path.  If they
 # are not in the path, then use the versions downloaded from github.

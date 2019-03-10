@@ -180,3 +180,8 @@ temp
 *.MAS
 *.UCN
 *.out
+
+# Common modififications
+/mt3dms/src/FILESPEC.INC
+/src/openspec.inc
+# git update-index --assume-unchanged src/openspec.inc
