@@ -91,20 +91,19 @@ def update_mt3dfiles(srcdir):
     return
 
 
-def test_compile_dev():
-    # Compile development version of the program from source.
-
-    # Compile
-    target = config.target
-    pymake.main(config.srcdir, target, config.fc, 'gcc', makeclean=True,
-                expedite=False, dryrun=False, double=False, debug=False,
-                include_subdirs=False, arch=config.target_arch,
-                fflags=config.fflags)
-
-    # Ensure target has been built
-    assert os.path.isfile(target) is True, 'Target {} does not exist.'.format(target)
-
-    return
+#def test_compile_dev():
+#    # Compile development version of the program from source.
+#
+#    # Compile
+#    target = config.target
+#    pymake.main(config.srcdir, target, config.fc, 'gcc', makeclean=True,
+#                expedite=False, dryrun=False, double=False, debug=False,
+#                include_subdirs=False, arch=config.target_arch)
+#
+#    # Ensure target has been built
+#    assert os.path.isfile(target) is True, 'Target {} does not exist.'.format(target)
+#
+#    return
 
 
 def test_download_assets():
@@ -142,5 +141,5 @@ def test_download_assets():
 
 if __name__ == '__main__':
     test_download_assets()
-    test_compile_dev()
+    #test_compile_dev()
     #test_compile_ref()
